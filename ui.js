@@ -12,16 +12,3 @@ setInterval(() => {
   langIndex = (langIndex + 1) % languages.length;
   document.getElementById("lang").textContent = languages[langIndex];
 }, 3000);
-
-// Training Terminal
-const terminal = document.getElementById("terminalOutput");
-function log(msg) {
-  terminal.textContent += "\n" + msg;
-  terminal.scrollTop = terminal.scrollHeight;
-}
-
-setInterval(() => {
-  const loss = (Math.random() * 0.1).toFixed(4);
-  const tokens = Math.floor(Math.random() * 50000);
-  log(`[TRAIN] loss=${loss} tokens=${tokens}`);
-}, 2000);
